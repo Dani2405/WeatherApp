@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --font-color: #313131;
+  --font-color-light: #313131;
+  --font-color: white;
   --bg-color: #EBF8FF;
+  --accent-color: #b8e6f3;
   --city-name-font: "Tilt Neon", sans-serif;
   --temperature-font: "Inter", sans-serif;
   --time-font: "Inter", sans-serif;
@@ -12,8 +14,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --font-color: white;
     --bg-color: #051923;
+    --accent-color: #58585c;
   }
 }
 
@@ -161,13 +163,19 @@ h3 {
   background-color: var(--bg-color);
   width: 80%;
   max-width: 344px;
-  box-shadow: 10px 0px 20px black;
+  box-shadow: 10px 0 20px #6d6d6d;
+  @media (prefers-color-scheme: dark) {
+    box-shadow: 10px 0 20px black;
+  }
 }
 
 .sidebar-header {
-  color: var(--font-color);
+  color: var(--font-color-light);
   height: 10%;
   font-size: 38px;
+  @media (prefers-color-scheme: dark) {
+    color: var(--font-color);
+  }
 }
 
 .sidebarLogo {
@@ -237,10 +245,14 @@ h3 {
 
 .addCity {
   color: var(--bg-color);
-  background-color: var(--font-color);
+  background-color: var(--accent-color);
   margin-top: 15px;
   transition: width 0.15s ease-in-out, height 0.15s ease-in-out;
   margin-bottom: 50px;
+  @media (prefers-color-scheme: dark) {
+    color: var(--bg-color);
+    background-color: var(--font-color);
+  }
 }
 
 .addCity input {
@@ -275,7 +287,7 @@ h3 {
   background: content-box currentColor;
   border: 2px solid transparent;
   border-radius: 8px;
-  color: #58585c;
+  color: var(--accent-color);
   min-height: 48px;
   min-width: 48px;
 }

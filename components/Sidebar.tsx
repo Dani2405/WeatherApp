@@ -86,7 +86,7 @@ const Sidebar: React.FC<SidebarProps> = (SidebarProps) => {
         <h1 className="sidebarLogo content-center p-5">WeatherApp</h1>
       </div>
       <div className="sidebar-content flex flex-col items-center">
-        {cityCards.map((cityData, index) => (
+        {cityCards.map((cityData: any, index) => (
           <CityCard key={index} weatherData={cityData.weatherData} handleCityChange={SidebarProps.handleCityChange}/>
         ))}
 
