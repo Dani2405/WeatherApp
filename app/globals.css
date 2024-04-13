@@ -48,8 +48,7 @@ h3 {
 
 .cityContainer {
   position: relative;
-  overflow-x: hidden;
-  overflow-y: visible;
+  overflow: hidden;
   padding: 20px;
   border-bottom-left-radius: 36px;
   padding-top: 80px;
