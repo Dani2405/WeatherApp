@@ -43,7 +43,7 @@ const City: React.FC<CityProps> = (CityProps) => {
           </div>
         </div>
 
-        <img className="cityWeather" src={`/icons/${CityProps.weatherData.weather[0].icon}.svg`}/>
+        <img className="cityWeather" src={`./icons/${CityProps.weatherData.weather[0].icon}.svg`}/>
         <div className="cityTime">
           <h2>{getOffsettedFormattedDate(CityProps.weatherData.timezone)}</h2>
           <h3>{getLocalTime(CityProps.weatherData.timezone)}</h3>
@@ -56,25 +56,25 @@ const City: React.FC<CityProps> = (CityProps) => {
               <div className="">
                 <h2>{days[0]}</h2>
                 <h3>{(weatherForecast as CityProps['weatherData']).list[0].weather[0].description}</h3>
-                <img className="" src={`/icons/${(weatherForecast as CityProps['weatherData']).list[0].weather[0].icon}.svg`}/>
+                <img className="" src={`./icons/${(weatherForecast as CityProps['weatherData']).list[0].weather[0].icon}.svg`}/>
               </div>
 
               <div className="">
                 <h2>{days[1]}</h2>
                 <h3>{(weatherForecast as CityProps['weatherData']).list[8].weather[0].description}</h3>
-                <img className="" src={`/icons/${(weatherForecast as CityProps['weatherData']).list[8].weather[0].icon}.svg`}/>
+                <img className="" src={`./icons/${(weatherForecast as CityProps['weatherData']).list[8].weather[0].icon}.svg`}/>
               </div>
 
               <div className="">
                 <h2>{days[2]}</h2>
                 <h3>{(weatherForecast as CityProps['weatherData']).list[16].weather[0].description}</h3>
-                <img className="" src={`/icons/${(weatherForecast as CityProps['weatherData']).list[16].weather[0].icon}.svg`}/>
+                <img className="" src={`./icons/${(weatherForecast as CityProps['weatherData']).list[16].weather[0].icon}.svg`}/>
               </div>
 
               <div className="">
                 <h2>{days[3]}</h2>
                 <h3>{(weatherForecast as CityProps['weatherData']).list[24].weather[0].description}</h3>
-                <img className="" src={`/icons/${(weatherForecast as CityProps['weatherData']).list[24].weather[0].icon}.svg`}/>
+                <img className="" src={`./icons/${(weatherForecast as CityProps['weatherData']).list[24].weather[0].icon}.svg`}/>
               </div>
             </>
           ) : (
