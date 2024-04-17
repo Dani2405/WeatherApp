@@ -24,21 +24,21 @@ const Home = () => {
 
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=7e36427cc8407261650051f0098f071e&units=metric`);
     if (!response.ok)
-      throw new Error('Failed to fetch weather data');
+      throw new Error('Failed to fetch weather data, might not exist in database');
     else {
-      saveCity(cityName);
       const data = await response.json()
       setWeatherData(data);
+      saveCity(data);
     }
   };
 
-  function saveCity(city: string) {
+  function saveCity(data: any) {
     if (localStorage.getItem('cities') === null)
-      return localStorage.setItem('cities', JSON.stringify([city]));
+      return localStorage.setItem('cities', JSON.stringify([data.name]));
 
     let storedCities = JSON.parse(localStorage.getItem('cities') || '[]');
-    if (!storedCities.includes(city))
-      storedCities.push(city);
+    if (!storedCities.includes(data.name))
+      storedCities.push(data.name);
     setCities(storedCities);
     localStorage.setItem('cities', JSON.stringify(storedCities));
   }
